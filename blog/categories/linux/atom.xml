@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | Erik Hellman]]></title>
+  <link href="http://ehellman.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://ehellman.github.io/"/>
+  <updated>2013-04-15T23:08:27+02:00</updated>
+  <id>http://ehellman.github.io/</id>
+  <author>
+    <name><![CDATA[Erik Hellman]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Reset Network Interface Naming Convention In Linux]]></title>
+    <link href="http://ehellman.github.io/blog/2013/04/15/reset-network-interface-naming-convention-in-linux/"/>
+    <updated>2013-04-15T22:32:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/04/15/reset-network-interface-naming-convention-in-linux</id>
+    <content type="html"><![CDATA[<h3>Reset Network Interface Naming Convention in Linux</h3>
+
+<p>I ran into this problem today on my old laptop that runs Arch. My network interfaces didn't have persistent names, my wired network interface was called <code>enp1s0</code> and my wireless <code>wlp2s0</code>, and when I plugged in an external WiFi dongle it named something like <code>wlp0s2s7su8sau</code> ... or something like that. By no means am I an expert, but I finally managed to solve this problem.</p>
+
+<!-- more -->
+
+
+<p>Here's how I did it:
+<code>
+$ ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
+</code></p>
+
+<p>This did the trick for me! After a reboot, ifconfig showed me: <code>eth0</code>, <code>lo</code> and <code>wlan0</code>, just the way I like it.</p>
+
+<p>Another way to display all the network interfaces is to type:
+<code>
+$ ls /sys/class/net
+</code></p>
+
+<p>Want to know more? This link explain why it's like this, and also includes the solution above:
+http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames</p>
+]]></content>
+  </entry>
+  
+</feed>
