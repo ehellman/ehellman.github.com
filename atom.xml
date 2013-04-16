@@ -4,7 +4,7 @@
   <title><![CDATA[Erik Hellman]]></title>
   <link href="http://ehellman.github.io/atom.xml" rel="self"/>
   <link href="http://ehellman.github.io/"/>
-  <updated>2013-04-15T23:29:57+02:00</updated>
+  <updated>2013-04-16T16:08:47+02:00</updated>
   <id>http://ehellman.github.io/</id>
   <author>
     <name><![CDATA[Erik Hellman]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Manually install a font in Arch Linux]]></title>
+    <link href="http://ehellman.github.io/blog/2013/04/16/manually-install-a-font-in-arch-linux/"/>
+    <updated>2013-04-16T15:56:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/04/16/manually-install-a-font-in-arch-linux</id>
+    <content type="html"><![CDATA[<p>Installing a font manually is something that I always used to forget how to do since most of the fonts that I installed I got through either yaourt or some other package manager.</p>
+
+<!-- more -->
+
+
+<p>Unpack the file and move it to the shared fonts folder</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mv font.ttf /usr/share/fonts/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or if you want to install the font for a single user, move it to the <code>.fonts</code> directory in the home folder.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mv font.ttf ~/.fonts/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You might also have to update <code>/etc/X11/xorg.conf</code> or <code>/etc/xorg.conf</code> with the new directory. Search for <code>FontPath</code> to find the correct location within the file to add your new path.</p>
+
+<p>Now, reload the font cache:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ fc-cache -vf</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Reset Network Interface Naming Convention In Linux]]></title>
