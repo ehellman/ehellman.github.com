@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jquery | Erik Hellman]]></title>
+  <link href="http://ehellman.github.io/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://ehellman.github.io/"/>
+  <updated>2013-06-27T19:14:15+02:00</updated>
+  <id>http://ehellman.github.io/</id>
+  <author>
+    <name><![CDATA[Erik Hellman]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Never write hasClass again]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/never-write-hasclass-again/"/>
+    <updated>2013-06-27T19:09:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/never-write-hasclass-again</id>
+    <content type="html"><![CDATA[<p><code>
+$('.navigation').hasClass('collapsed');
+</code></p>
+
+<p>The code above can be easily refactored into the both shorter and easier to read:
+<code>
+$('.navigation').is('.collapsed');
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

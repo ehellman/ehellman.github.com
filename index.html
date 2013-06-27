@@ -9,7 +9,9 @@
   <meta name="author" content="Erik Hellman">
 
   
-  <meta name="description" content="Installing a font manually is something that I always used to forget how to do since most of the fonts that I installed I got through either yaourt &hellip;">
+  <meta name="description" content="1
+$('.navigation').hasClass('collapsed'); The code above can be easily refactored into the both shorter and easier to read: 1
+$('.navigation').is('. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +79,187 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/never-write-hasclass-again/">Never Write hasClass Again</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-27T19:09:00+02:00" pubdate data-updated="true">Jun 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$('.navigation').hasClass('collapsed');</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The code above can be easily refactored into the both shorter and easier to read:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$('.navigation').is('.collapsed');</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/heroku-permission-denied-publickey/">Heroku Permission Denied (Publickey)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-27T19:08:00+02:00" pubdate data-updated="true">Jun 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was presented with this today when I tried to push my app to Heroku.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/27/heroku-permission-denied-publickey/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/heroku-create-doesnt-add-heroku-as-remote/">&#8216;Heroku Create&#8217; Doesn&#8217;t Add Heroku as Remote</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-27T19:06:00+02:00" pubdate data-updated="true">Jun 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push heroku master
+</span><span class='line'>fatal: 'heroku' does not appear to be a git repository
+</span><span class='line'>fatal: Could not read from remote repository.
+</span><span class='line'>
+</span><span class='line'>Please make sure you have the correct access rights
+</span><span class='line'>and the repository exists.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This problem occurs because you don&#8217;t have heroku listed as a remote, to add it, execute the following:</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/27/heroku-create-doesnt-add-heroku-as-remote/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/multiple-monitors-on-a-linux-machine/">Multiple Monitors on a Linux Machine</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-27T19:02:00+02:00" pubdate data-updated="true">Jun 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I use this shell script to shoot up the screen of my 1005HA netbook to a 27&#8221; monitor.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/27/multiple-monitors-on-a-linux-machine/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -173,11 +356,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/04/16/manually-install-a-font-in-arch-linux/">Manually install a font in Arch Linux</a>
+        <a href="/blog/2013/06/27/never-write-hasclass-again/">Never write hasClass again</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/04/15/reset-network-interface-naming-convention-in-linux/">Reset Network Interface Naming Convention In Linux</a>
+        <a href="/blog/2013/06/27/heroku-permission-denied-publickey/">Heroku Permission denied (publickey)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/heroku-create-doesnt-add-heroku-as-remote/">&#8216;heroku create&#8217; doesn&#8217;t add heroku as remote</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/multiple-monitors-on-a-linux-machine/">Multiple monitors on a Linux machine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/16/manually-install-a-font-in-arch-linux/">Manually install a font in Arch Linux</a>
       </li>
     
   </ul>

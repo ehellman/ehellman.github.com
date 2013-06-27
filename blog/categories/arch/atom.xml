@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Arch | Erik Hellman]]></title>
   <link href="http://ehellman.github.io/blog/categories/arch/atom.xml" rel="self"/>
   <link href="http://ehellman.github.io/"/>
-  <updated>2013-04-16T16:08:47+02:00</updated>
+  <updated>2013-06-27T19:14:15+02:00</updated>
   <id>http://ehellman.github.io/</id>
   <author>
     <name><![CDATA[Erik Hellman]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Multiple monitors on a Linux machine]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/multiple-monitors-on-a-linux-machine/"/>
+    <updated>2013-06-27T19:02:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/multiple-monitors-on-a-linux-machine</id>
+    <content type="html"><![CDATA[<p>I use this shell script to shoot up the screen of my 1005HA netbook to a 27" monitor.</p>
+
+<!-- more -->
+
+
+<p>It turns off the netbook display too since it's too small to use as either mirror, even extending the desktop to it would be a waste.</p>
+
+<p><code>
+xrandr --output LVDS1 --off --output VGA1 --mode 1920x1080 --pos 0x0
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Manually install a font in Arch Linux]]></title>

@@ -4,7 +4,7 @@
   <title><![CDATA[Erik Hellman]]></title>
   <link href="http://ehellman.github.io/atom.xml" rel="self"/>
   <link href="http://ehellman.github.io/"/>
-  <updated>2013-04-16T16:08:47+02:00</updated>
+  <updated>2013-06-27T19:14:15+02:00</updated>
   <id>http://ehellman.github.io/</id>
   <author>
     <name><![CDATA[Erik Hellman]]></name>
@@ -12,6 +12,143 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Never write hasClass again]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/never-write-hasclass-again/"/>
+    <updated>2013-06-27T19:09:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/never-write-hasclass-again</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$('.navigation').hasClass('collapsed');</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The code above can be easily refactored into the both shorter and easier to read:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$('.navigation').is('.collapsed');</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Heroku Permission denied (publickey)]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/heroku-permission-denied-publickey/"/>
+    <updated>2013-06-27T19:08:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/heroku-permission-denied-publickey</id>
+    <content type="html"><![CDATA[<p>I was presented with this today when I tried to push my app to Heroku.</p>
+
+<!-- more -->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push heroku master
+</span><span class='line'>The authenticity of host 'heroku.com (X.X.X.X)' can't be established.
+</span><span class='line'>RSA key fingerprint is X:X:X:X:X:X:X:X:X:X.
+</span><span class='line'>Are you sure you want to continue connecting (yes/no)? yes
+</span><span class='line'>Warning: Permanently added 'heroku.com,X.X.X.X' (RSA) to the list of known hosts.
+</span><span class='line'>Identity added: /Users/username/.ssh/id_rsa (/Users/username/.ssh/id_rsa)
+</span><span class='line'>Permission denied (publickey).
+</span><span class='line'>fatal: Could not read from remote repository.
+</span><span class='line'>
+</span><span class='line'>Please make sure you have the correct access rights
+</span><span class='line'>and the repository exists.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This happens when your ssh-keys aren&#8217;t uploaded to Heroku. The solution is:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ heroku keys:add ~/.ssh/id_rsa.pub
+</span><span class='line'>Uploading SSH public key /Users/username/.ssh/id_rsa.pub... done</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA['heroku create' doesn't add heroku as remote]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/heroku-create-doesnt-add-heroku-as-remote/"/>
+    <updated>2013-06-27T19:06:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/heroku-create-doesnt-add-heroku-as-remote</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push heroku master
+</span><span class='line'>fatal: 'heroku' does not appear to be a git repository
+</span><span class='line'>fatal: Could not read from remote repository.
+</span><span class='line'>
+</span><span class='line'>Please make sure you have the correct access rights
+</span><span class='line'>and the repository exists.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This problem occurs because you don&#8217;t have heroku listed as a remote, to add it, execute the following:</p>
+
+<!-- more -->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote add heroku git@heroku.com:application-name.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Replacing &#8216;application-name&#8217; with the actual name of your application. Now the push should succeed:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push heroku master
+</span><span class='line'>Counting objects: 63, done.
+</span><span class='line'>Delta compression using up to 4 threads.
+</span><span class='line'>Compressing objects: 100% (49/49), done.
+</span><span class='line'>Writing objects: 100% (63/63), 25.92 KiB, done.
+</span><span class='line'>Total 63 (delta 2), reused 0 (delta 0)
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>-----&gt; Ruby/Rails app detected
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>. . .</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multiple monitors on a Linux machine]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/multiple-monitors-on-a-linux-machine/"/>
+    <updated>2013-06-27T19:02:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/multiple-monitors-on-a-linux-machine</id>
+    <content type="html"><![CDATA[<p>I use this shell script to shoot up the screen of my 1005HA netbook to a 27&#8221; monitor.</p>
+
+<!-- more -->
+
+
+<p>It turns off the netbook display too since it&#8217;s too small to use as either mirror, even extending the desktop to it would be a waste.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>xrandr --output LVDS1 --off --output VGA1 --mode 1920x1080 --pos 0x0</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Manually install a font in Arch Linux]]></title>

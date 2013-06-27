@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby on rails | Erik Hellman]]></title>
+  <link href="http://ehellman.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
+  <link href="http://ehellman.github.io/"/>
+  <updated>2013-06-27T19:14:15+02:00</updated>
+  <id>http://ehellman.github.io/</id>
+  <author>
+    <name><![CDATA[Erik Hellman]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Heroku Permission denied (publickey)]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/heroku-permission-denied-publickey/"/>
+    <updated>2013-06-27T19:08:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/heroku-permission-denied-publickey</id>
+    <content type="html"><![CDATA[<p>I was presented with this today when I tried to push my app to Heroku.</p>
+
+<!-- more -->
+
+
+<p>```
+$ git push heroku master
+The authenticity of host 'heroku.com (X.X.X.X)' can't be established.
+RSA key fingerprint is X:X:X:X:X:X:X:X:X:X.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'heroku.com,X.X.X.X' (RSA) to the list of known hosts.
+Identity added: /Users/username/.ssh/id_rsa (/Users/username/.ssh/id_rsa)
+Permission denied (publickey).
+fatal: Could not read from remote repository.</p>
+
+<p>Please make sure you have the correct access rights
+and the repository exists.
+```</p>
+
+<p>This happens when your ssh-keys aren't uploaded to Heroku. The solution is:
+<code>
+$ heroku keys:add ~/.ssh/id_rsa.pub
+Uploading SSH public key /Users/username/.ssh/id_rsa.pub... done
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA['heroku create' doesn't add heroku as remote]]></title>
+    <link href="http://ehellman.github.io/blog/2013/06/27/heroku-create-doesnt-add-heroku-as-remote/"/>
+    <updated>2013-06-27T19:06:00+02:00</updated>
+    <id>http://ehellman.github.io/blog/2013/06/27/heroku-create-doesnt-add-heroku-as-remote</id>
+    <content type="html"><![CDATA[<p>```
+$ git push heroku master
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.</p>
+
+<p>Please make sure you have the correct access rights
+and the repository exists.
+```</p>
+
+<p>This problem occurs because you don't have heroku listed as a remote, to add it, execute the following:</p>
+
+<!-- more -->
+
+
+<p><code>
+$ git remote add heroku git@heroku.com:application-name.git
+</code></p>
+
+<p>Replacing 'application-name' with the actual name of your application. Now the push should succeed:
+```
+$ git push heroku master
+Counting objects: 63, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (49/49), done.
+Writing objects: 100% (63/63), 25.92 KiB, done.
+Total 63 (delta 2), reused 0 (delta 0)</p>
+
+<p>-----> Ruby/Rails app detected</p>
+
+<p>. . .
+```</p>
+]]></content>
+  </entry>
+  
+</feed>
